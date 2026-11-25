@@ -1,35 +1,51 @@
-var icon1 = "Imagens/Icon1.png";
-var icon2 = "Imagens/Icon2.png";
-var icon3 = "Imagens/Icon3.png";
-var icon4 = "Imagens/Icon4.png";
+let icon1 = "Imagens/Icon1.png";
+let icon2 = "Imagens/Icon2.png";
+let icon3 = "Imagens/Icon3.png";
+let icon4 = "Imagens/Icon4.png";
 
-function alterar(){
-    document.getElementById("icon1").src = icon1;
-    let aux = icon1;
-    icon1 = icon2;
-    icon2 = icon3;
-    icon3 = icon4;
-    icon4 = aux;
+const imgPerfil = document.getElementById("icon1");
+const btnAlterar = document.querySelector('.alterar');
+const btnCurtir = document.getElementById("curtir");
+const spanCurtida = document.getElementById("curtida");
+const btnModoEscuro = document.querySelector('.modoescuro');
+const btnVoltar = document.querySelector('.voltar');
+
+// Função para alternar as fotos do perfil
+if (btnAlterar) {
+    btnAlterar.addEventListener('click', () => {
+        imgPerfil.src = icon2; // Rotaciona as imagens
+        let aux = icon1;
+        icon1 = icon2;
+        icon2 = icon3;
+        icon3 = icon4;
+        icon4 = aux;
+    });
 }
 
-//-------------------------------------------------------------------------
+// Lógica de curtidas
+let numCurtidas = 1817;
 
-var curtida = 1817;
-
-function curtir(){
-    document.getElementById("curtida").innerHTML = ++curtida;
-    document.getElementById("curtir").innerHTML = "Curtido! ♥";
-    document.getElementById("curtir").disabled = true;
+if (btnCurtir) {
+    btnCurtir.addEventListener('click', () => {
+        numCurtidas++;
+        spanCurtida.textContent = numCurtidas;
+        btnCurtir.textContent = "Curtido! ♥";
+        btnCurtir.disabled = true;
+    });
 }
 
-//-------------------------------------------------------------------------
+// Modo Escuro
+if (btnModoEscuro) {
+    btnModoEscuro.addEventListener('click', () => {
+        document.body.classList.toggle('escuro');
+        const isEscuro = document.body.classList.contains('escuro');
+        btnModoEscuro.textContent = isEscuro ? 'Alterar para Modo Claro' : 'Alterar para Modo Escuro';
+    });
+}
 
-const modoescuro = document.querySelector('.modoescuro');
-modoescuro.addEventListener('click', function() {
-    document.body.classList.toggle('escuro');
-    if (document.body.classList.contains('escuro')) {
-        modoescuro.textContent = 'Alterar para Modo Claro';
-    } else {
-        modoescuro.textContent = 'Alterar para Modo Escuro';
-    }
-});
+// Botão Voltar
+if (btnVoltar) {
+    btnVoltar.addEventListener('click', () => {
+        window.location.href = 'Inicialportfolio.html';
+    });
+}

@@ -18,7 +18,7 @@ body {
     object-fit: cover;
 }
 
-.alterar {
+.alterar, .curtir, .modoescuro, .voltar, .verperfil {
     background-color: #ffedb1;
     color: #000000;
     padding: 10px 20px;
@@ -29,97 +29,22 @@ body {
     cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
     display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto 0;
 }
 
-.alterar:hover {
+.alterar:hover, .curtir:hover, .modoescuro:hover, .voltar:hover, .verperfil:hover {
   background-color: #ffeaa6;
   color: #1a1918;
 }
 
-.alterar:active {
+.alterar:active, .curtir:active, .modoescuro:active, .voltar:active, .verperfil:active {
   background-color: #ecdeb5;
   color: #000000;
 }
 
-.curtir {
-    background-color: #ffedb1;
-    color: #000000;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 14px;
-    border: 1px solid #ffffe5;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.curtir:hover {
-  background-color: #ffeaa6;
-  color: #1a1918;
-}
-
-.curtir:active {
-  background-color: #ecdeb5;
-  color: #000000;
-}
-
-.modoescuro {
-    background-color: #ffedb1;
-    color: #000000;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 14px;
-    border: 1px solid #ffffe5;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.modoescuro:hover {
-  background-color: #ffeaa6;
-  color: #1a1918;
-}
-
-.modoescuro:active {
-  background-color: #ecdeb5;
-  color: #000000;
-}
-
-.voltar {
-    background-color: #ffedb1;
-    color: #000000;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 14px;
-    border: 1px solid #ffffe5;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.voltar:hover {
-  background-color: #ffeaa6;
-  color: #1a1918;
-}
-
-.voltar:active {
-  background-color: #ecdeb5;
-  color: #000000;
+.verperfil {
+    margin: 0;
+    justify-self: start;
 }
 
 h1 {
@@ -238,31 +163,6 @@ li {
     border-radius: 50%;
     object-fit: cover;
     margin: 0;
-}
-
-.verperfil {
-    grid-column: 2;
-    grid-row: 3;
-    justify-self: start;
-    background-color: #ffedb1;
-    color: #000000;
-    padding: 10px 20px;
-    font-weight: bold;
-    font-size: 14px;
-    border: 1px solid #ffffe5;
-    border-radius: 20px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
-}
-
-.verperfil:hover {
-  background-color: #ffeaa6;
-  color: #1a1918;
-}
-
-.verperfil:active {
-  background-color: #ecdeb5;
-  color: #000000;
 }
 
 .biografia {
