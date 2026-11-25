@@ -49,3 +49,32 @@ if (btnVoltar) {
         window.location.href = 'Inicialportfolio.html';
     });
 }
+
+document.querySelectorAll('.btn-curtir').forEach((botao) => {
+  botao.addEventListener('click', () => {
+    const icone = botao.querySelector('.icone-coracao');
+    const texto = botao.querySelector('.texto-curtir');
+    const jaCurtido = botao.classList.toggle('curtido');
+
+    if (jaCurtido) {
+      if (icone) icone.textContent = '❤️';
+      if (texto) texto.textContent = 'Curtido';
+    } else {
+      if (icone) icone.textContent = '🤍';
+      if (texto) texto.textContent = 'Curtir';
+    }
+
+    const coracao = document.createElement('span');
+    coracao.classList.add('coracao-flutuante');
+    coracao.textContent = '❤️';
+
+    const desvioX = Math.floor(Math.random() * 40) - 20;
+    coracao.style.setProperty('--desvio-x', `${desvioX}px`);
+
+    botao.appendChild(coracao);
+
+    coracao.addEventListener('animationend', () => {
+      coracao.remove();
+    });
+  });
+});

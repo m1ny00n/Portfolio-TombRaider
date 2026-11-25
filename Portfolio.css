@@ -160,3 +160,62 @@ button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+ .acoes-perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-curtir {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.75);
+  color: #f5f5f5;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn-curtir:hover {
+  transform: scale(1.05);
+  border-color: #e63946;
+}
+
+.btn-curtir.curtido {
+  border-color: #e63946;
+  background: rgba(230, 57, 70, 0.2);
+}
+
+.coracao-flutuante {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  font-size: 1.3rem;
+  pointer-events: none;
+  user-select: none;
+  animation: subirCoracao 1s ease-out forwards;
+}
+
+@keyframes subirCoracao {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.7);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translate(calc(-50% + var(--desvio-x, 0px)), -45px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--desvio-x, 0px)), -90px) scale(1);
+  }
+}
