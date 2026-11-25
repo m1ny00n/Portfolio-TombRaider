@@ -13,7 +13,7 @@ const btnVoltar = document.querySelector('.voltar');
 // Função para alternar as fotos do perfil
 if (btnAlterar) {
     btnAlterar.addEventListener('click', () => {
-        imgPerfil.src = icon2; // Rotaciona as imagens
+        imgPerfil.src = icon2;
         let aux = icon1;
         icon1 = icon2;
         icon2 = icon3;
@@ -34,12 +34,12 @@ if (btnCurtir) {
     });
 }
 
-// Modo Escuro
+// Modo Escuro / Claro (Agora usando a classe 'claro')
 if (btnModoEscuro) {
     btnModoEscuro.addEventListener('click', () => {
-        document.body.classList.toggle('escuro');
-        const isEscuro = document.body.classList.contains('escuro');
-        btnModoEscuro.textContent = isEscuro ? 'Alterar para Modo Claro' : 'Alterar para Modo Escuro';
+        document.body.classList.toggle('claro');
+        const isClaro = document.body.classList.contains('claro');
+        btnModoEscuro.textContent = isClaro ? 'Alterar para Modo Survivor' : 'Alterar para Modo Claro';
     });
 }
 

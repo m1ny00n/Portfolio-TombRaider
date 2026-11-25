@@ -1,17 +1,29 @@
-/* Paleta de Cores Tomb Raider Survivor */
+/* Variáveis de Tema */
 :root {
-    --bg-dark: #0f0f0f;
-    --card-bg: #1a1a1a;
-    --accent-red: #8b0000;
-    --text-main: #e0e0e0;
-    --text-muted: #a0a0a0;
-    --border-color: #333;
-    --hover-red: #b30000;
+    /* Tema Survivor (Padrão) */
+    --bg-body: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --accent: #8b0000;
+    --accent-hover: #b30000;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+    --border: #333;
+}
+
+/* Tema Claro (Alternativo) */
+body.claro {
+    --bg-body: #f5f5f5;
+    --bg-card: #ffffff;
+    --accent: #d32f2f;
+    --accent-hover: #b71c1c;
+    --text-primary: #212121;
+    --text-secondary: #616161;
+    --border: #ddd;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,31 +31,33 @@ body {
     margin: 0;
     padding: 20px;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Layout do Container */
 .caixa {
-    background-color: var(--card-bg);
+    background-color: var(--bg-card);
     padding: 40px;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border);
     border-radius: 4px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     margin-bottom: 30px;
     max-width: 700px;
     width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-/* Estilo dos Botões - UI do Jogo */
+/* Estilo dos Botões */
 .alterar, .curtir, .modoescuro, .voltar, .verperfil {
     background-color: transparent;
-    color: var(--text-main);
+    color: var(--text-primary);
     padding: 12px 24px;
     font-weight: bold;
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border: 1px solid var(--text-muted);
-    border-radius: 0; /* Bordas retas como no jogo */
+    border: 1px solid var(--text-secondary);
+    border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease;
     display: block;
@@ -52,33 +66,29 @@ body {
 }
 
 .alterar:hover, .curtir:hover, .modoescuro:hover, .voltar:hover, .verperfil:hover {
-    background-color: var(--accent-red);
-    border-color: var(--accent-red);
+    background-color: var(--accent);
+    border-color: var(--accent);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
 }
 
-.alterar:active, .curtir:active, .modoescuro:active, .voltar:active, .verperfil:active {
-    transform: translateY(0);
-}
-
 /* Tipografia */
 h1 {
-    color: white;
+    color: var(--text-primary);
     text-align: center;
     font-size: 42px;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 10px;
-    border-bottom: 2px solid var(--accent-red);
+    border-bottom: 2px solid var(--accent);
     display: inline-block;
     width: 100%;
     padding-bottom: 10px;
 }
 
 h2 {
-    color: var(--accent-red);
+    color: var(--accent);
     font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -86,19 +96,18 @@ h2 {
 }
 
 h3 {
-    color: var(--text-muted);
+    color: var(--text-secondary);
     text-align: center;
     font-size: 16px;
     margin-top: 0;
 }
 
 p, li {
-    color: var(--text-main);
-    font-size: 16px;
+    color: var(--text-primary);
 }
 
 span#curtida {
-    color: var(--accent-red);
+    color: var(--accent);
     font-weight: bold;
 }
 
@@ -107,7 +116,7 @@ span#curtida {
     width: 200px;
     height: 200px;
     margin: 0 auto 20px;
-    border: 3px solid var(--accent-red);
+    border: 3px solid var(--accent);
     padding: 5px;
 }
 
@@ -117,11 +126,11 @@ span#curtida {
     object-fit: cover;
 }
 
-/* Página Inicial - Grid de Perfis */
+/* Página Inicial */
 .perfis {
-    background-color: var(--card-bg);
+    background-color: var(--bg-card);
     padding: 20px;
-    border-left: 4px solid var(--accent-red);
+    border-left: 4px solid var(--accent);
     margin-bottom: 20px;
     max-width: 800px;
     width: 100%;
@@ -129,50 +138,25 @@ span#curtida {
     grid-template-columns: 120px 1fr;
     gap: 20px;
     align-items: center;
-    transition: background 0.3s ease;
-}
-
-.perfis:hover {
-    background-color: #252525;
 }
 
 .fotoperfil {
     width: 100px;
     height: 100px;
-    border-radius: 0;
-    border: 1px solid var(--border-color);
     object-fit: cover;
 }
 
 .nome {
     font-size: 24px;
     margin: 0;
-    color: white;
-    border: none;
-    text-align: left;
-    padding: 0;
+    color: var(--text-primary);
 }
 
 .biografia {
-    color: var(--text-muted);
-    font-size: 14px;
-    margin: 5px 0;
+    color: var(--text-secondary);
 }
 
-.verperfil {
-    margin: 10px 0 0 0;
-    padding: 8px 16px;
-}
-
-/* Estilo para Botões Desabilitados */
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-    border-color: #444;
-}
-
-button:disabled:hover {
-    background-color: transparent;
-    box-shadow: none;
-    transform: none;
 }
